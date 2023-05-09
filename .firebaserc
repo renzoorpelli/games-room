@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "salajuegos-67459": {
+      "hosting": {
+        "SalaDeJuegos": [
+          "salajuegos-67459"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "salajuegos-67459"
+  }
+}

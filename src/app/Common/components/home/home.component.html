@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="jumbotron">
+    <h1 class="display-4">Bienvenido</h1>
+    <p class="lead">Trabajo practico sala de juegos</p>
+    <hr class="my-4">
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-sm-4">
+      <div class="jumbotron">
+        <h1 class="display-6">Panel Usuarios</h1>
+        <ng-container *ngIf="!_userFromLocalStorage; else Bienvenido">
+          <p class="lead">Acciones usuarios</p>
+          <div class="mb-3 mx-2">
+            <button class="btn btn-outline-info btn-lg mr-2" routerLink="usuario/login">Iniciar Sesion</button>
+          </div>
+          <div class="mb-3 mx-2">
+            <button class="btn btn-outline-info btn-lg" routerLink="usuario/register">Registrarse</button>
+          </div>
+        </ng-container>
+        <ng-template #Bienvenido>
+          <p>Bienvenido {{this._userFromLocalStorage?.nombre}}</p>
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="jumbotron">
+        <h1 class="display-6">Juegos</h1>
+        <p class="lead">Proximamente...</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="jumbotron">
+        <h1 class="display-6">Juego Personal</h1>
+        <p class="lead">Proximamente...</p>
+      </div>
+    </div>
+  </div>
+</div>
+

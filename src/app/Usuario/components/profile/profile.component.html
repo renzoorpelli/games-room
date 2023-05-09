@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture">
+    </div>
+    <ng-container *ngIf="userFromLocalStorage != undefined;else Logueate">
+      <div class="col-md-8 ml-md-4">
+        <h2 class="display-5">Bienvenido {{ userFromLocalStorage?._nombre }}</h2>
+        <p>Mail: {{ userFromLocalStorage?._email }}</p>
+        <p>Constraseña: {{ userFromLocalStorage?.password }}</p>
+        <div class="d-flex">
+          <button class="btn btn-outline-primary mx-2">Editar Perfil</button>
+          <button class="btn btn-outline-danger" (click)="logOut()">Cerrar sesión</button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #Logueate>
+      <h1 class="display-5">Por favor inicia sesión.</h1>
+    </ng-template>
+  </div>
+</div>

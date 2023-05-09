@@ -1,0 +1,71 @@
+<div class="d-flex align-items-center justify-content-center vh-100">
+  <div class="container">
+    <div class="row justify-content-center custom-row">
+      <div class="col-6">
+        <app-form
+          title="Registro"
+          [form]="registerForm"
+          (formSubmitted)="onSubmitEventHandler($event)"
+        >
+        <div class="form-group mb-3" [formGroup]="registerForm">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            formControlName="nombre"
+          />
+          <ng-container *ngIf="this.registerForm.get('nombre')?.hasError">
+            <div>
+              <label class="text-danger">Nombre Invalido</label>
+            </div>
+          </ng-container>
+        </div>
+          <div class="form-group mb-3" [formGroup]="registerForm">
+            <label for="email">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+            <ng-container *ngIf="this.registerForm.get('email')?.hasError">
+              <div>
+                <label class="text-danger">Email Invalido</label>
+              </div>
+            </ng-container>
+          </div>
+          <div class="form-group mb-3" [formGroup]="registerForm">
+            <label for="confirmEmail">Confirmar Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="confirmEmail"
+              formControlName="confirmEmail"
+            />
+            <ng-container *ngIf="this.registerForm.get('confirmEmail')?.hasError">
+              <div>
+                <label class="text-danger">Email Invalido</label>
+              </div>
+            </ng-container>
+          </div>
+          <div class="form-group mb-3" [formGroup]="registerForm">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              formControlName="password"
+            />
+            <ng-container *ngIf="this.registerForm.get('password')?.hasError">
+              <div>
+                <label class="text-danger">Password no puede estar vacio</label>
+              </div>
+            </ng-container>
+          </div>
+          <button class="btn btn-outline-success mx-1" type="submit">Registrarse</button>
+        </app-form>
+      </div>
+    </div>
+  </div>
+</div>
