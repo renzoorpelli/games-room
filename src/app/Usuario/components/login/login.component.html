@@ -15,11 +15,14 @@
               id="email"
               formControlName="email"
             />
-            <ng-container *ngIf="this.loginForm?.get('email')?.hasError">
-              <div>
-                <label class="text-danger">Email Invalido</label>
+            <ng-container *ngIf="this.mail?.invalid && (this.mail?.touched || this.mail?.dirty)">
+              <div *ngIf="this.mail!.errors?.['required'] || this.mail!.errors?.['email']">
+                <div>
+                  <label class="text-danger">Email Inválido</label>
+                </div>
               </div>
             </ng-container>
+
           </div>
           <div class="form-group mb-3" [formGroup]="loginForm">
             <label for="password">Password:</label>
@@ -29,9 +32,11 @@
               class="form-control"
               formControlName="password"
             />
-            <ng-container *ngIf="this.loginForm?.get('password')?.hasError">
-              <div>
-                <label class="text-danger">Password no puede estar vacio</label>
+            <ng-container *ngIf="this.password?.invalid && (this.password?.touched || this.password?.dirty)">
+              <div *ngIf="this.password!.errors?.['required']">
+                <div>
+                  <label class="text-danger">Password no puede estar vacío</label>
+                </div>
               </div>
             </ng-container>
           </div>

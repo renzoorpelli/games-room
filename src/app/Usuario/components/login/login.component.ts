@@ -31,9 +31,16 @@ export class LoginComponent implements OnInit{
     })
   }
 
+  // getters that references to a formGroup Elements
+  get mail(){
+    return this.loginForm.get('email');
+  }
+
+  get password(){
+    return this.loginForm.get('password');
+  }
 
   onSubmitEventHandler($event:Usuario){
-
     let respuesta = this._usuarioService.login($event);
     respuesta.then(response => {
       if(response.valido){

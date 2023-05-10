@@ -29,15 +29,28 @@ export class RegisterComponent {
 
   createForm() {
     this.registerForm = new FormGroup({
-      nombre: new FormControl(''),
-      // email: new FormControl('', {
-      //   asyncValidators: this.userExistAsyncValidator(),
-      //   updateOn: "blur"
-      // }),
-      email: new FormControl(''),
-      confirmEmail: new FormControl(''),
-      password: new FormControl(''),
+      nombre: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(80)]),
+      email: new FormControl('', [Validators.email, Validators.required, ]),
+      confirmEmail: new FormControl('', [this.EmailValidator(), Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
     });
+  }
+
+  // getters that references to formGroup elements
+  get nombre(){
+    return this.registerForm.get('nombre');
+  }
+
+  get email(){
+    return this.registerForm.get('email')
+  }
+
+  get confirmEmail(){
+    return this.registerForm.get('confirmEmail');
+  }
+
+  get password(){
+    return this.registerForm.get('password');
   }
 
   //metodo encargado de manejar el evento submit que recibe del formsModule
@@ -61,37 +74,12 @@ export class RegisterComponent {
   //
   EmailValidator(): ValidatorFn {
     return (formGroup: AbstractControl): ValidationErrors | null => {
-      let mail = formGroup.get('mail');
-      let confirmEmail = formGroup.get('confirmEmail');
-      let response = { response: 'los mail no son iguales' };
 
-      if (mail?.value === confirmEmail?.value) {
-        formGroup.get('confirmEmail')?.setErrors(null);
-        return null;
-      }
-
-      formGroup.get('confirmEmail')?.setErrors(response);
-      return response;
+      return formGroup.get('email')?.value === formGroup.get('confirmEmail')?.value
+      ? null
+      : {"notEqual" : true}
     };
   }
-
-  // validador asincrono, encargado de verificar que el mail con el que se intenta registrar el usuario
-  // no exista en la base de datos
-  userExistAsyncValidator(): AsyncValidatorFn {
-    let error: ValidationErrors = [];
-    return async (
-      control: AbstractControl
-    ): Promise<ValidationErrors | null> => {
-      console.log('pregunto al validador');
-      if (await this._usuarioService.userExist(control.value)) {
-        console.log('entro al validador');
-        error = [{ error: 'el mail ingresado ya existe' }];
-        return error;
-      }
-      return null;
-    };
-  }
-
   alertaMensajeSucces(mensaje: string): void {
     Swal.fire({
       title: 'Sucess!',
