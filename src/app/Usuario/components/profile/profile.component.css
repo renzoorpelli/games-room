@@ -1,0 +1,90 @@
+.card {
+  width: 350px;
+  background-color: #2b3035;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #fff;
+  /* height: 50vh; */
+}
+
+.image img {
+  transition: all 0.5s
+}
+
+.card:hover .image img {
+  transform: scale(1.5)
+}
+
+.btn {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold
+}
+
+.idd {
+  font-size: 14px;
+  font-weight: 600
+}
+
+.idd1 {
+  font-size: 12px
+}
+
+.number {
+  font-size: 22px;
+  font-weight: bold
+}
+
+.follow {
+  font-size: 12px;
+  font-weight: 500;
+  color: #444444
+}
+
+.btn1 {
+  height: 40px;
+  width: 150px;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #9461fb;
+  color: #9461fb;
+  font-size: 15px
+}
+
+.btn1 :hover{
+  background-color: #9461fb;
+}
+
+.text span {
+  font-size: 13px;
+  color: #545454;
+  font-weight: 500
+}
+
+.icons i {
+  font-size: 19px
+}
+
+hr .new1 {
+  border: 1px solid
+}
+
+.join {
+  background-color: transparent;
+  font-size: 14px;
+  border: 2px solid #9461fb;
+  border-radius: 10px;
+  color: #9461fb;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.date {
+  background-color: transparent
+}

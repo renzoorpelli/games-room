@@ -1,99 +1,112 @@
-<div class="d-flex align-items-center justify-content-center vh-100">
-  <div class="container">
-    <div class="row justify-content-center custom-row">
-      <div class="col-6">
-        <app-form
-          title="Registro"
-          [form]="registerForm"
-          (formSubmitted)="onSubmitEventHandler($event)"
-        >
-          <div class="form-group mb-3" [formGroup]="registerForm">
-            <label for="nombre">Nombre Completo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="nombre"
-              formControlName="nombre"
-            />
-            <ng-container
-              *ngIf="
-                this.nombre?.invalid &&
-                (this.nombre?.touched || this.nombre?.dirty)
-              "
-            >
-              <div *ngIf="this.nombre!.errors?.['required']">
-                <div>
-                  <label class="text-danger">El Nombre no puede estar vacio.</label>
-                </div>
-              </div>
-              <div *ngIf="this.nombre!.errors?.['minlength']">
-                <div>
-                  <label class="text-danger">El nombre no puede tener menos de 10 caracteres.</label>
-                </div>
-              </div>
-              <div *ngIf="this.nombre!.errors?.['maxlength']">
-                <div>
-                  <label class="text-danger">El nombre no puede tener más de 80 caracteres.</label>
-                </div>
-              </div>
-            </ng-container>
-          </div>
-          <div class="form-group mb-3" [formGroup]="registerForm">
-            <label for="email">Email:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              formControlName="email"
-            />
-            <ng-container *ngIf="
-            this.email?.invalid &&
-            (this.email?.touched || this.email?.dirty)
-          ">
-              <div *ngIf="this.email!.errors?.['required'] || this.email!.errors?.['email']">
-                <label class="text-danger">Email Invalido</label>
-              </div>
-            </ng-container>
-          </div>
-          <div class="form-group mb-3" [formGroup]="registerForm">
-            <label for="confirmEmail">Confirmar Email:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="confirmEmail"
-              formControlName="confirmEmail"
-            />
-            <ng-container *ngIf="this.confirmEmail?.invalid &&
-            (this.confirmEmail?.touched || this.confirmEmail?.dirty)">
-            <div *ngIf="this.confirmEmail!.errors?.['required'] || this.confirmEmail!.errors?.['email']">
-              <label class="text-danger">Email Inválido</label>
-            </div>
-            <div *ngIf="this.confirmEmail!.errors?.['notEqual']">
-              <label class="text-danger">Los Emails no coinciden</label>
-            </div>
-            </ng-container>
-          </div>
-          <div class="form-group mb-3" [formGroup]="registerForm">
-            <label for="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              class="form-control"
-              formControlName="password"
-            />
-            <ng-container *ngIf="
-            this.password?.invalid &&
-            (this.password?.touched || this.password?.dirty)">
-              <div *ngIf="this.password!.errors?.['required'] || this.password!.errors?.['passowrd']">
-                <label class="text-danger">Password no puede estar vacio</label>
-              </div>
-            </ng-container>
-          </div>
-          <button class="btn btn-outline-success mx-1" type="submit">
-            Registrarse
-          </button>
-        </app-form>
+<div class="contanier">
+<app-form
+  title="Bienvenido nuevo usuario@"
+  [form]="registerForm"
+  (formSubmitted)="onSubmitEventHandler($event)"
+>
+  <div class="form-group mb-3" [formGroup]="registerForm">
+    <label for="nombre" class="lblTitulo">Nombre Completo</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nombre"
+      formControlName="nombre"
+    />
+    <ng-container
+      *ngIf="
+        this.nombre?.invalid && (this.nombre?.touched || this.nombre?.dirty)
+      "
+    >
+      <div *ngIf="this.nombre!.errors?.['required']">
+        <div>
+          <label class="text-danger lblMsgError"
+            >El Nombre no puede estar vacio.</label
+          >
+        </div>
       </div>
-    </div>
+      <div *ngIf="this.nombre!.errors?.['minlength']">
+        <div>
+          <label class="text-danger lblMsgError"
+            >El nombre no puede tener menos de 10 caracteres.</label
+          >
+        </div>
+      </div>
+      <div *ngIf="this.nombre!.errors?.['maxlength']">
+        <div>
+          <label class="text-danger lblMsgError"
+            >El nombre no puede tener más de 80 caracteres.</label
+          >
+        </div>
+      </div>
+    </ng-container>
   </div>
+  <div class="form-group mb-3" [formGroup]="registerForm">
+    <label for="email" class="lblTitulo">Email:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      formControlName="email"
+    />
+    <ng-container
+      *ngIf="this.email?.invalid && (this.email?.touched || this.email?.dirty)"
+    >
+      <div
+        *ngIf="this.email!.errors?.['required'] || this.email!.errors?.['email']"
+      >
+        <label class="text-danger lblMsgError">Email Invalido</label>
+      </div>
+    </ng-container>
+  </div>
+  <div class="form-group mb-3" [formGroup]="registerForm">
+    <label for="confirmEmail" class="lblTitulo">Confirmar Email:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="confirmEmail"
+      formControlName="confirmEmail"
+    />
+    <ng-container
+      *ngIf="
+        this.confirmEmail?.invalid &&
+        (this.confirmEmail?.touched || this.confirmEmail?.dirty)
+      "
+    >
+      <div
+        *ngIf="this.confirmEmail!.errors?.['required'] || this.confirmEmail!.errors?.['email']"
+      >
+        <label class="text-danger lblMsgError">Email Inválido</label>
+      </div>
+      <div *ngIf="this.confirmEmail!.errors?.['notEqual']">
+        <label class="text-danger lblMsgError">Los Emails no coinciden</label>
+      </div>
+    </ng-container>
+  </div>
+  <div class="form-group mb-3" [formGroup]="registerForm">
+    <label for="password" class="lblTitulo">Password:</label>
+    <input
+      type="password"
+      id="password"
+      class="form-control"
+      formControlName="password"
+    />
+    <ng-container
+      *ngIf="
+        this.password?.invalid &&
+        (this.password?.touched || this.password?.dirty)
+      "
+    >
+      <div
+        *ngIf="this.password!.errors?.['required'] || this.password!.errors?.['passowrd']"
+      >
+        <label class="text-danger lblMsgError"
+          >Password no puede estar vacio</label
+        >
+      </div>
+    </ng-container>
+  </div>
+  <button class="btn btn-outline-secondary mx-1" type="submit">
+    Registrarse
+  </button>
+</app-form>
 </div>

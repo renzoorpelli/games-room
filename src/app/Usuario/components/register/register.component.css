@@ -1,0 +1,48 @@
+
+.lblTitulo{
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.lblMsgError{
+  color: #e64c4c;
+  font-size: 20px;
+}
+
+.form-group{
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.form-control{
+  background-color: rgb(45, 52, 61);
+  border: 2px solid #2b3035;
+  height: 50px;
+  color: #fff;
+}
+
+.form-control :focus {
+  background-color: rgb(45, 52, 61);
+  border: 2px solid #9461fb;
+}
+
+button{
+  height: 50px;
+  width: 160px;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.btn-outline-secondary{
+  color: #9461fb;
+  background-color: transparent;
+  border-color: #9461fb;
+}
+
+
+.btn-outline-secondary:hover{
+  color: #fff;
+  background-color: #9461fb;
+  border-color: #9461fb;
+}

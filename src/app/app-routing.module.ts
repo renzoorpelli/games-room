@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent,  canActivate: [AuthGuardService] },
   { path: 'aboutme', component: AboutmeComponent},
-  { path: 'usuario', loadChildren: () => import('./Usuario/module/usuario.module').then(m => m.UsuarioModule) }
+  { path: 'usuario', loadChildren: () => import('./Usuario/module/usuario.module').then(m => m.UsuarioModule)},
+  { path: 'juegos', loadChildren: () => import('./Juego/module/juegos.module').then(m => m.JuegosModule)}
+
 ];
 
 @NgModule({

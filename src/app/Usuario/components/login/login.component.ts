@@ -13,9 +13,6 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit{
 
-  //TODO hacer login y registro bien la logica
-  //TODO chequear los validators
-
   loginForm!:FormGroup;
 
   ngOnInit(): void {
@@ -52,8 +49,6 @@ export class LoginComponent implements OnInit{
     });
   }
 
-
-  // TODO esto tiene que estar en en el formulario de alta y register
   alertaMensajeSucces(mensaje:string):void{
     Swal.fire(
       {

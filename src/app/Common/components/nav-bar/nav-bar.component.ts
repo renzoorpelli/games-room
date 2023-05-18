@@ -5,6 +5,7 @@ import { UsuarioService } from 'src/app/Usuario/services/usuario.service';
 
 @Component({
   selector: 'app-nav-bar',
+  styleUrls: ['./nav-bar.component.css'],
   templateUrl: './nav-bar.component.html'
 })
 export class NavBarComponent{

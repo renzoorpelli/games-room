@@ -85,8 +85,8 @@ export class RegisterComponent {
       title: 'Sucess!',
       text: mensaje,
       icon: 'success',
-      confirmButtonText: 'Aceptar',
-      confirmButtonAriaLabel: '<a routerLink="usuario/login"></a>',
+      confirmButtonText: 'Aceptar'//,
+      //confirmButtonAriaLabel: '<a routerLink="usuario/login"></a>',
     });
   }
 

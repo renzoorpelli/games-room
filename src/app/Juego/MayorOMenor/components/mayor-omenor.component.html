@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h1 class="display-2">MAYOR O MENOR!</h1>
+    </div>
+  </div>
+  <ng-container *ngIf="!currentCard">
+    <div class="row">
+      <div class="col text-md-center">
+        <button class="btn btn-outline-secondary" *ngIf="currentCard === undefined" (click)="initGame()">INICIAR JUEGO!
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="currentCard">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="customBorder text-center mb-3">
+          <h4>P U N T O S</h4>
+          <p> {{ points }}</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="customBorder text-center mb-3">
+          <h4>C A R T A S   R E S T A N T E S</h4>
+          <p>{{ TOTAL_CARDS }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center containerImage">
+        <picture class="d-inline-block mt-3">
+          <img class="pokercard img-fluid mx-auto d-block" [src]="currentCard.image_url" [alt]="currentCard.value">
+        </picture>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="currentCard">
+    <div class="alert alert-success" role="alert" *ngIf="guessed">
+      Correcto!
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="notGuessed">
+      Lo lamento, sigue intentado!
+    </div>
+  </ng-container>
+  <ng-container *ngIf="currentCard && !isFinished">
+    <div class="row" >
+      <div class="col text-md-center ">
+        <button class="btn btn-outline-secondary mx-2" (click)="guessCard(1)">Mayor </button>
+        <button class="btn btn-outline-secondary" (click)="guessCard(0)">Menor</button>
+      </div>
+    </div>
+    <div class="row" *ngIf="isFinished">
+      <div class="col text-md-center">
+        <button class="btn  btn-outline-secondary" (click)="resetGame()">Jugar de nuevo
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

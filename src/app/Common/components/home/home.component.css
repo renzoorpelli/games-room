@@ -1,0 +1,16 @@
+li {
+  color: white;
+  margin-bottom: 5px;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover{
+  color: #9461fb;
+  transform: scale(1.1);
+}

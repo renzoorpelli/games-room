@@ -1,27 +1,36 @@
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6">
+  <div class="container containerStyle">
+      <h1>Renzo Orpelli!</h1>
+      <p>Desarrollador Back End</p>
+  </div>
+  <div class="containerImage">
+    <img src="https://img.magic.ly/avatar/35167ed9d1b4691ff78cb21e1d139427.webp?1614180829768"  alt="imagen-perfil" class="rounded-circle img-fluid" style="height: 200px;">
+  </div>
+    </div>
+    <div class="container">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">About Me</h5>
-          <p class="card-text">Mi nombre es Renzo Orpelli, soy desarrollador .NET y estudiante universitario, esta pagina esta realizada para la materia Laboratorio IV, y este Trabajo se trata sobre una pagina de juegos cuya funcionalidad se esta construyendo.</p>
+          <p class="card-text">Hola! soy un desarrollador .NET, vivo en Buenos Aires, Argentina. Actualmente soy estudiante universitario aparte de mi trabajo profesional como Programador. <br>Este sitio fue creado en Angular, especialmente para la materia Laboratorio de Software IV, sobre el primer trabajo práctico el cual se llama "Sala de juegos" que te contaré de que va luego. </p>
         </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="text-center">
-        <img src="https://img.magic.ly/avatar/35167ed9d1b4691ff78cb21e1d139427.webp?1614180829768" alt="Your Image" class="rounded-circle img-fluid">
-      </div>
-    </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Juego Creado</h5>
-          <p class="card-text">aca va la info del juego nuevo creado por mi.</p>
+          <h5 class="card-title">Sobre el trabajo práctico</h5>
+          <p class="card-text">La metodología de entrega es mediante Sprints, actualmente el trabajo tiene 6 sprints. Se trata sobre una "Sala de juegos" tal como aclara el nombre. Consiste en que tendremos que crear una plataforma la cual contiene usuarios, donde estos podrán hacer uso de los juegos que fueron desarrollados por mí, completamente desde 0.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Juegos incluidos</h5>
+          <ul>
+            <li><a routerLink="juegos/ahorcado">Ahorcado</a><p class="card-text">El clásico juego del ahorcado donde tienes 7 intentos para adivinar la palabra que se te es asignada antes que estos se acaben.</p></li>
+            <li><a routerLink="juegos/mayoromenor">Mayor o Menor</a><p class="card-text">En este juego, el sistema eligirá automaticamente una carta al azar numérica de un mazo convencional de poker, la cual no se te será revelada y unicamente con la que se te es revelada en pantalla, tendrás que adivinar si es mayor o menor a la que se encuentra oculta. Este desarrollo fue posible gracias a la API pública de <a  href="https://deckofcardsapi.com/" target="_blank">Deck Of Cards</a></p></li>
+            <li><a routerLink="juegos/ahorcado">Preguntados</a><p class="card-text">Proximamente...</p></li>
+
+          </ul>
+
         </div>
       </div>
     </div>
-  </div>
-</div>
+

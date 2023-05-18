@@ -1,14 +1,14 @@
 <div class="container mt-5">
   <div class="jumbotron">
-    <h1 class="display-4">Bienvenido</h1>
-    <p class="lead">Trabajo practico sala de juegos</p>
-    <hr class="my-4">
+    <h1>Bienvenid@</h1>
+    <p class="lead">Trabajo práctico "Sala de juegos"</p>
+    <p>Aquí podrás encontrar distintas atracciones para pasar el rato, en su totalidad se encuentran desarrolladas por mi.</p>
+    <hr>
   </div>
-
   <div class="row mt-5">
     <div class="col-sm-4">
       <div class="jumbotron">
-        <h1 class="display-6">Panel Usuarios</h1>
+        <h2 class="">Quién sos? </h2>
         <ng-container *ngIf="!_userFromLocalStorage; else Bienvenido">
           <p class="lead">Acciones usuarios</p>
           <div class="mb-3 mx-2">
@@ -19,20 +19,27 @@
           </div>
         </ng-container>
         <ng-template #Bienvenido>
-          <p>Bienvenido {{this._userFromLocalStorage?.nombre}}</p>
+          <p class="lead">Segun puedo verificar, tu estás registrado como <br> <b>{{this._userFromLocalStorage?.nombre}}</b> es hora de jugar!</p>
         </ng-template>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="jumbotron">
-        <h1 class="display-6">Juegos</h1>
-        <p class="lead">Proximamente...</p>
+        <h2>Juegos</h2>
+        <hr>
+        <p class="lead">Aquí tienes un listado de los juegos que ya puedes empezar a disfrutar</p>
+        <ul>
+          <li><a routerLink="juegos/ahorcado">Ahorcado</a><p class="card-text">El clásico juego del ahorcado donde tienes 7 intentos para adivinar la palabra que se te es asignada antes que estos se acaben.</p></li>
+          <li><a routerLink="juegos/mayoromenor">Mayor o Menor</a><p class="card-text">En este juego, el sistema eligirá automaticamente una carta al azar numérica de un mazo convencional de poker, la cual no se te será revelada y unicamente con la que se te es revelada en pantalla, tendrás que adivinar si es mayor o menor a la que se encuentra oculta. Este desarrollo fue posible gracias a la API pública de <a  href="https://deckofcardsapi.com/" target="_blank">Deck Of Cards</a></p></li>
+          <li><a routerLink="juegos/ahorcado">Preguntados</a><p class="card-text">Proximamente...</p></li>
+        </ul>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="jumbotron">
-        <h1 class="display-6">Juego Personal</h1>
-        <p class="lead">Proximamente...</p>
+        <h2>Juego Personal</h2>
+        <hr>
+        <p class="lead">Está temática trata de inventar un juego y desarrollarlo, lamento informarte que todavía no forma parte del sprint en el que te encuentras,  <b>proximamente tendremos novedades!</b></p>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ import { ProfileComponent } from '../components/profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent, canActivate: [NoAuthGuardService]},
+  { path: 'login', component: LoginComponent, canActivate: [NoAuthGuardService]}, //, canActivate: [NoAuthGuardService]
   { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuardService]},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]}
 ];

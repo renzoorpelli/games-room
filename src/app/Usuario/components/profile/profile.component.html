@@ -1,10 +1,11 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row mt-4">
     <div class="col-md-4">
       <img src="https://via.placeholder.com/150" alt="Profile Picture">
     </div>
     <ng-container *ngIf="userFromLocalStorage != undefined;else Logueate">
       <div class="col-md-8 ml-md-4">
+        <h1>Mi Pefil</h1>
         <h2 class="display-5">Bienvenido {{ userFromLocalStorage._nombre }}</h2>
         <p>Mail: {{ userFromLocalStorage._email }}</p>
         <p>Constraseña: {{ userFromLocalStorage.password }}</p>
@@ -17,5 +18,39 @@
     <ng-template #Logueate>
       <h1 class="display-5">Por favor inicia sesión.</h1>
     </ng-template>
+  </div>
+</div> -->
+<!-- TODO VERIFICAR LA IMAGEN DE PERFIL QUE ANDA MEDIO MAL -->
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+  <div class="card p-4">
+    <div
+      class="image d-flex flex-column justify-content-center align-items-center"
+    >
+      <button class="btn btn-secondary">
+        <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" />
+      </button>
+      <span class="name mt-3">{{userFromLocalStorage?._nombre}}</span>
+      <span class="idd">@{{userFromLocalStorage!._nombre.toLowerCase().replace(" ", "")}}</span>
+      <div
+        class="d-flex flex-row justify-content-center align-items-center gap-2"
+      >
+        <span class="idd1">Oxc4c16a645_b21a</span>
+        <span><i class="fa fa-copy"></i></span>
+      </div>
+      <div class="d-flex mt-2">
+        <button class="btn1" disabled>Edit Profile</button>
+      </div>
+      <div class="d-flex mt-2">
+        <button class="btn1" (click)="logOut()">Cerrar sesión</button>
+      </div>
+      <div class="text mt-3">
+        <span
+          >{{userFromLocalStorage?._email}}
+        </span>
+      </div>
+      <div class="px-2 rounded mt-4 date">
+        <span class="join">Joined May,2021</span>
+      </div>
+    </div>
   </div>
 </div>
