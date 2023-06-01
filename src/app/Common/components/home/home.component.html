@@ -9,6 +9,7 @@
     <div class="col-sm-4">
       <div class="jumbotron">
         <h2 class="">Quién sos? </h2>
+        <hr>
         <ng-container *ngIf="!_userFromLocalStorage; else Bienvenido">
           <p class="lead">Acciones usuarios</p>
           <div class="mb-3 mx-2">
@@ -23,7 +24,7 @@
         </ng-template>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 scrollable-col">
       <div class="jumbotron">
         <h2>Juegos</h2>
         <hr>
@@ -31,15 +32,22 @@
         <ul>
           <li><a routerLink="juegos/ahorcado">Ahorcado</a><p class="card-text">El clásico juego del ahorcado donde tienes 7 intentos para adivinar la palabra que se te es asignada antes que estos se acaben.</p></li>
           <li><a routerLink="juegos/mayoromenor">Mayor o Menor</a><p class="card-text">En este juego, el sistema eligirá automaticamente una carta al azar numérica de un mazo convencional de poker, la cual no se te será revelada y unicamente con la que se te es revelada en pantalla, tendrás que adivinar si es mayor o menor a la que se encuentra oculta. Este desarrollo fue posible gracias a la API pública de <a  href="https://deckofcardsapi.com/" target="_blank">Deck Of Cards</a></p></li>
-          <li><a routerLink="juegos/ahorcado">Preguntados</a><p class="card-text">Proximamente...</p></li>
+          <li><a routerLink="juegos/ahorcado">Preguntados</a><p class="card-text">En esta oportunidad, se muestra una implementación propia del clásico juego argentino   <a href="https://preguntados.com/" target="_blank">Preguntados</a>, el juego se encuentra en inglés, ya que la consigna pedía utilizar la trivia de preguntas desde una API. En mi caso utilicé la API Pública de  <a href="https://the-trivia-api.com/" target="_blank">The Trivia API</a>.</p></li>
+          <li><a routerLink="juegos/pong">Pong</a><p class="card-text">Como juego propio, implementé el juego Pong, que es clásico y divertido. ¿Cómo se juega? notarán que al inciar el juego, moverán al jugador de la parte izquierda de la cancha y a su véz para simular un segundo jugar el del lado derecho se moverá en dirección contraria. Intenta que el segundo jugador no toque la la pelota para poder ganar puntos. La partida consta de 5 saques.</p></li>
         </ul>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="jumbotron">
-        <h2>Juego Personal</h2>
+        <h2>Materia</h2>
         <hr>
-        <p class="lead">Está temática trata de inventar un juego y desarrollarlo, lamento informarte que todavía no forma parte del sprint en el que te encuentras,  <b>proximamente tendremos novedades!</b></p>
+        <p class="lead">La materia para cual se desarrolló este plataforma es Laboratorio de computación IV a cargo de los <b>Profesores</b>:</p>
+        <ul>
+          <li><a href="https://github.com/flippiJS" target="_blank">Franco Lippi</a></li>
+          <li><a href="https://github.com/mrampi" target="_blank">Mario Rampi</a></li>
+          <li><a href="https://github.com/amorelli-utnfra" target="_blank">Augusto Morelli</a></li>
+          <li><a href="https://github.com/AgustinFrich" target="_blank">Agustín Friadenrich</a></li>
+        </ul>
       </div>
     </div>
   </div>

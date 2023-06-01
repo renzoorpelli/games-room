@@ -6,13 +6,18 @@ import { AhorcadoComponent } from '../Ahorcado/components/ahorcado.component';
 import { MayorOMenorComponent } from '../MayorOMenor/components/mayor-omenor.component';
 import { AhorcadoService } from '../Ahorcado/services/ahorcado.service';
 import { MayorOMenorService } from '../MayorOMenor/services/mayor-omenor.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
+import { PreguntadosComponent } from '../Preguntados/components/preguntados.component';
+import { PreguntadosService } from '../Preguntados/services/preguntados.service';
+import { PongService } from '../Pong/services/pong.service';
+import { PongComponent } from '../Pong/components/pong.component';
 
 @NgModule({
   declarations: [
     AhorcadoComponent,
-    MayorOMenorComponent
+    MayorOMenorComponent,
+    PreguntadosComponent,
+    PongComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +26,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     AhorcadoService,
-    MayorOMenorService
+    MayorOMenorService,
+    PreguntadosService,
+    PongService
   ]
 })
 export class JuegosModule { }

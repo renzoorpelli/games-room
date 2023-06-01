@@ -1,0 +1,66 @@
+#pongCanvas {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: #2b3035;
+}
+
+.container{
+  padding-top: 50px;
+}
+
+h3{
+  color: #fff;
+}
+
+.customBorder {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  background-color: #2b3035;
+}
+
+.alert-warning{
+  background-color: #2b3035;
+  color: rgb(224, 152, 57);
+  border: 2px solid rgb(224, 152, 57);
+}
+
+.alert-success{
+  background-color: #2b3035;
+  color:  rgb(63, 143, 73);
+  border: 2px solid rgb(63, 143, 73);
+}
+
+.btn-outline-secondary{
+  color: #9461fb;
+  background-color: transparent;
+  border-color: #9461fb;
+}
+
+.btn-outline-secondary:hover{
+  color: #ffffff;
+  background-color: #9461fb;
+  border-color: #9461fb;
+}
+
+
+.component-container{
+  overflow-y: auto;
+  max-height: 89vh;
+}
+
+.component-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.component-container::-webkit-scrollbar-track {
+  background: #2b3035;
+}
+
+.component-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.component-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

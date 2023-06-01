@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="chat-container" [ngClass]="{'chat-open': isChatOpen}">
+
+    <div class="card">
+      <div class="card-header" (click)="toggleChat()">
+        <p class="">Chat <span class="logged-in">●</span></p>
+      </div>
+      <div class="card-body" *ngIf="isChatOpen">
+        <!-- Chat content here -->
+        <ul class="chat-list">
+          <ng-container *ngIf="this.listadoMensajes; else sinMensjes">
+            <li class="chat-message right" *ngFor="let item of this.listadoMensajes">
+              <div class="chat-bubble">
+                <p class="message"><b>{{item.usuario}}:</b></p>
+                <p class="message">{{item.contenido}}</p>
+              </div>
+            </li>
+          </ng-container>
+          <ng-template #sinMensjes>
+            <li class="chat-message right">
+              <div class="chat-bubble">
+                <p class="message">No hay mensajes disponibles</p>
+                <p class="message">...</p>
+              </div>
+            </li>
+          </ng-template>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <form (ngSubmit) = "sendMessage()">
+          <div class="row">
+            <div class="col-8">
+              <input type="text" placeholder="Escriba un mensaje" class="form-control mb-3"  [(ngModel)] = "currentMessage" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-secondary" type="submit">Enviar</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

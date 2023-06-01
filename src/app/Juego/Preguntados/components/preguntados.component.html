@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h1 class="display-2">PREGUNTADOS!</h1>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="!this.gameStarted">
+  <div class="container">
+    <div class="row">
+      <div class="col text-md-center">
+        <button class="btn btn-outline-secondary" (click)="startGame()">INICIAR JUEGO!
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="this.gameStarted && this.currentQuestion">
+  <div class="container">
+    <div class="jumbotron customBorder text-center">
+      <div class="row">
+        <h2>Category: {{this.currentQuestion!.category!}}</h2>
+      </div>
+      <div class="row">
+        <h2>{{this.currentQuestion!.question!.text}}</h2>
+      </div>
+      <div class="row mt-4">
+        <button *ngFor="let item of shuffledAnswers"
+        type="button"
+        class="btn btn-outline-secondary mb-3"
+        (click)="this.checkAnswer(item)"
+        [disabled] = "isFinished">
+      {{item}}</button>
+      </div>
+      <ng-container *ngIf="currentQuestion">
+        <div class="alert alert-success" role="alert" *ngIf="guessed">
+          Correct!
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="notGuessed">
+          Sorry, Incorrect!
+        </div>
+      </ng-container>
+      <div class="row" *ngIf="isFinished">
+        <div class="col text-md-center">
+          <button class="btn  btn-outline-secondary" (click)="resetGame()">Play again!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+

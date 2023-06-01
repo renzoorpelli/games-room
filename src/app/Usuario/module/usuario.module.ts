@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { UsuarioRoutingModule } from '../routing/usuario-routing.module';
 import { LoginComponent } from '../components/login/login.component';
@@ -12,25 +12,33 @@ import { AuthGuardService } from '../services/auth.service';
 import { UsuarioLogService } from '../Logs/services/usuario-log.service';
 import { NoAuthGuardService } from '../services/noauth.service';
 import { ProfileComponent } from '../components/profile/profile.component';
+import { ChatComponent } from '../components/chat/chat.component';
+import { UsuarioChatRepositoryService } from '../services/usuario-chat-repository.service';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
     UsuarioRoutingModule,
     ReactiveFormsModule,
-    FormModule
+    FormModule,
+    FormsModule
   ],
   providers: [
     UsuarioService,
     UsuarioRepositoryService,
     AuthGuardService,
     NoAuthGuardService,
-    UsuarioLogService
+    UsuarioLogService,
+    UsuarioChatRepositoryService
+  ],
+  exports:[
+    ChatComponent
   ]
 
 })

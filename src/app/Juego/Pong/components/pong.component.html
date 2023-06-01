@@ -1,0 +1,71 @@
+<div class="component-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h1 class="display-2">PONG!</h1>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="!this.gameStarted">
+    <div class="container">
+      <div class="row">
+        <div class="col text-md-center">
+          <button class="btn btn-outline-secondary" (click)="startGame()">
+            INICIAR JUEGO!
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <div class="container">
+    <div class="jumbotron customBorder text-center">
+      <div class="row">
+        <h3>PUNTAJES</h3>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>Jugador 1</h3>
+          <p>{{ this.pointsPlayerOne }}</p>
+        </div>
+        <div class="col">
+          <h3>Computer</h3>
+          <p>{{ this.pointsPlayerTwo }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="this.isFinished">
+      <div
+        class="alert alert-success"
+        role="alert"
+        *ngIf="this.pointsPlayerOne > pointsPlayerTwo"
+      >
+        Ganador Jugador Uno
+      </div>
+      <div
+        class="alert alert-success"
+        role="alert"
+        *ngIf="this.pointsPlayerOne < pointsPlayerTwo"
+      >
+        Ganadoor Jugador Dos
+      </div>
+      <div
+        class="alert alert-warning"
+        role="alert"
+        *ngIf="this.pointsPlayerOne === pointsPlayerTwo"
+      >
+        EMPATE!
+      </div>
+      <div class="row">
+        <div class="col text-md-center mb-3">
+          <button class="btn btn-outline-secondary" (click)="resetGame()">
+            Juegar de Nuevo
+          </button>
+        </div>
+      </div>
+    </ng-container>
+    <div class="jumbotron customBorder text-center">
+      <canvas id="pongCanvas" width="800" height="400"></canvas>
+    </div>
+  </div>
+</div>
+

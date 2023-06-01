@@ -46,3 +46,25 @@ button{
   background-color: #9461fb;
   border-color: #9461fb;
 }
+
+
+.scrollable-col {
+  overflow-y: auto;
+  max-height: 89vh;
+}
+
+.scrollable-col::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-col::-webkit-scrollbar-track {
+  background: #2b3035;
+}
+
+.scrollable-col::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.scrollable-col::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

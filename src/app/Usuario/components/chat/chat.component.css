@@ -1,0 +1,104 @@
+.chat-container {
+  margin-bottom: 88px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 400px;
+  background-color: #2b3035;
+
+  transition: transform 0.3s;
+  transform: translateY(100%);
+}
+
+.chat-open {
+  transform: translateY(0);
+}
+
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.card{
+  background-color: #2b3035;
+  color: #fff;
+  border: 1px solid #858585;
+  height: 100%;
+}
+
+.logged-in {
+  color: rgb(70, 255, 70);
+}
+
+
+.form-control{
+  background-color: rgb(45, 52, 61);
+  border: 2px solid #2b3035;
+  color: #fff;
+}
+
+
+.btn-outline-secondary{
+  color: #9461fb;
+  background-color: transparent;
+  border-color: #9461fb;
+}
+
+
+.btn-outline-secondary:hover{
+  color: #fff;
+  background-color: #9461fb;
+  border-color: #9461fb;
+}
+
+.chat-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chat-message {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.right .chat-bubble {
+  background-color: rgb(45, 52, 61);
+  border-radius: 10px;
+  padding: 10px;
+  align-self: flex-end;
+}
+
+.message{
+  color: #fff;
+}
+
+.card-body{
+  overflow: auto;
+}
+
+.card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-body::-webkit-scrollbar-track {
+  background: #2b3035;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
